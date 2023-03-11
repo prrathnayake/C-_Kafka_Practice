@@ -14,14 +14,8 @@ void receiveMessage(KafkaConsumer *kafkaConsumer)
     kafkaConsumer->consumeMessages(cb);
 }
 
-int main()
+void sendMessage(KafkaProducer *kafkaProducer)
 {
-    KafkaConsumer *kafkaConsumer = new KafkaConsumer("localhost:9092", "topic");
-
-    std::thread receive(receiveMessage, kafkaConsumer);
-
-    KafkaProducer *kafkaProducer = new KafkaProducer("localhost:9092");
-
     while (true)
     {
         std::string input;
@@ -29,9 +23,20 @@ int main()
 
         kafkaProducer->produceMessages("topic", input);
     }
+}
 
-    receive.join();
+int main()
+{
+    KafkaConsumer *kafkaConsumer = new KafkaConsumer("localhost:9092", "topic");
+    std::thread messageReceivingThread(receiveMessage, kafkaConsumer);
 
+    KafkaProducer *kafkaProducer = new KafkaProducer("localhost:9092");
+    std::thread messageSendingThread(sendMessage, kafkaProducer);
+
+    messageReceivingThread.join();
+    messageSendingThread.join();
+
+    delete kafkaProducer;
     delete kafkaConsumer;
 
     return 0;
