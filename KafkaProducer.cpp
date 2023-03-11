@@ -2,7 +2,7 @@
 #include <string>
 #include <librdkafka/rdkafkacpp.h>
 
-#include "DeliveryReportCb.cpp"
+#include "DeliveryReportCb.h"
 #include "KafkaProducer.h"
 
 KafkaProducer::KafkaProducer(std::string brokers)
@@ -18,9 +18,44 @@ KafkaProducer::KafkaProducer(std::string brokers)
         exit(1);
     }
 
-    ExampleDeliveryReportCb ex_dr_cb;
+    if (conf->set("linger.ms", "0", errstr) !=
+        RdKafka::Conf::CONF_OK)
+    {
+        std::cerr << errstr << std::endl;
+        exit(1);
+    }
+
+    if (conf->set("batch.num.messages", "30", errstr) !=
+        RdKafka::Conf::CONF_OK)
+    {
+        std::cerr << errstr << std::endl;
+        exit(1);
+    }
+
+    if (conf->set("acks", "1", errstr) !=
+        RdKafka::Conf::CONF_OK)
+    {
+        std::cerr << errstr << std::endl;
+        exit(1);
+    }
+
+    if (conf->set("compression.type", "lz4", errstr) !=
+        RdKafka::Conf::CONF_OK)
+    {
+        std::cerr << errstr << std::endl;
+        exit(1);
+    }
+
+    DeliveryReportCb ex_dr_cb;
 
     if (conf->set("dr_cb", &ex_dr_cb, errstr) != RdKafka::Conf::CONF_OK)
+    {
+        std::cerr << errstr << std::endl;
+        exit(1);
+    }
+
+    if (conf->set("delivery.report.only.error", "true", errstr) !=
+        RdKafka::Conf::CONF_OK)
     {
         std::cerr << errstr << std::endl;
         exit(1);
@@ -66,12 +101,9 @@ retry:
 KafkaProducer::~KafkaProducer()
 {
     std::cerr << "% Flushing final messages..." << std::endl;
-    std::cerr << "1" << std::endl;
     producer->flush(10 * 1000);
-    std::cerr << "2" << std::endl;
     if (producer->outq_len() > 0)
         std::cerr << producer->outq_len()
                   << " message(s) were not delivered" << std::endl;
-    std::cerr << "3" << std::endl;
     delete producer;
 }

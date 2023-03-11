@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/kafka-cpp-getting-started/ConsumeCb.cpp" "CMakeFiles/exec.dir/ConsumeCb.cpp.o" "gcc" "CMakeFiles/exec.dir/ConsumeCb.cpp.o.d"
   "/root/kafka-cpp-getting-started/DeliveryReportCb.cpp" "CMakeFiles/exec.dir/DeliveryReportCb.cpp.o" "gcc" "CMakeFiles/exec.dir/DeliveryReportCb.cpp.o.d"
+  "/root/kafka-cpp-getting-started/Helper.cpp" "CMakeFiles/exec.dir/Helper.cpp.o" "gcc" "CMakeFiles/exec.dir/Helper.cpp.o.d"
   "/root/kafka-cpp-getting-started/KafkaConsumer.cpp" "CMakeFiles/exec.dir/KafkaConsumer.cpp.o" "gcc" "CMakeFiles/exec.dir/KafkaConsumer.cpp.o.d"
   "/root/kafka-cpp-getting-started/KafkaProducer.cpp" "CMakeFiles/exec.dir/KafkaProducer.cpp.o" "gcc" "CMakeFiles/exec.dir/KafkaProducer.cpp.o.d"
   "/root/kafka-cpp-getting-started/main.cpp" "CMakeFiles/exec.dir/main.cpp.o" "gcc" "CMakeFiles/exec.dir/main.cpp.o.d"

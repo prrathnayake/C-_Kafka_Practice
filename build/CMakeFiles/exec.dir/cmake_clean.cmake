@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/exec.dir/ConsumeCb.cpp.o.d"
   "CMakeFiles/exec.dir/DeliveryReportCb.cpp.o"
   "CMakeFiles/exec.dir/DeliveryReportCb.cpp.o.d"
+  "CMakeFiles/exec.dir/Helper.cpp.o"
+  "CMakeFiles/exec.dir/Helper.cpp.o.d"
   "CMakeFiles/exec.dir/KafkaConsumer.cpp.o"
   "CMakeFiles/exec.dir/KafkaConsumer.cpp.o.d"
   "CMakeFiles/exec.dir/KafkaProducer.cpp.o"

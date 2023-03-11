@@ -3,6 +3,7 @@
 #include <librdkafka/rdkafkacpp.h>
 
 #include "ConsumeCb.h"
+#include "Helper.h"
 
 void ExCosumeCb::msg_consume(RdKafka::Message *message)
 {
@@ -11,7 +12,7 @@ void ExCosumeCb::msg_consume(RdKafka::Message *message)
     case RdKafka::ERR__TIMED_OUT:
         break;
     case RdKafka::ERR_NO_ERROR:
-        std::cout << static_cast<const char *>(message->payload()) << std::endl;
+        std::cout << Helper::getTimeInMicroseconds() - std::stoll(static_cast<const char *>(message->payload())) << std::endl;
         break;
 
     case RdKafka::ERR__UNKNOWN_TOPIC:

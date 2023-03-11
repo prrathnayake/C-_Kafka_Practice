@@ -5,6 +5,7 @@
 #include "KafkaProducer.h"
 #include "KafkaConsumer.h"
 #include "ConsumeCb.h"
+#include "Helper.h"
 
 #include <librdkafka/rdkafkacpp.h>
 
@@ -16,12 +17,13 @@ void receiveMessage(KafkaConsumer *kafkaConsumer)
 
 void sendMessage(KafkaProducer *kafkaProducer)
 {
-    while (true)
+    int count = 0;
+    while (count < 10)
     {
-        std::string input;
-        std::cin >> input;
-
-        kafkaProducer->produceMessages("topic", input);
+        std::string message = std::to_string(Helper::getTimeInMicroseconds());
+        kafkaProducer->produceMessages("topic", message);
+        count++;
+        Helper::holdSeconds(1);
     }
 }
 
@@ -33,10 +35,11 @@ int main()
     KafkaProducer *kafkaProducer = new KafkaProducer("localhost:9092");
     std::thread messageSendingThread(sendMessage, kafkaProducer);
 
-    messageReceivingThread.join();
     messageSendingThread.join();
-
     delete kafkaProducer;
+
+    kafkaConsumer->stopConsumeMessages();
+    messageReceivingThread.join();
     delete kafkaConsumer;
 
     return 0;

@@ -10,11 +10,25 @@ KafkaConsumer::KafkaConsumer(std::string brokers, std::string topics)
     std::string errstr;
     RdKafka::Conf *conf = RdKafka::Conf::create(RdKafka::Conf::CONF_GLOBAL);
 
-    conf->set("metadata.broker.list", brokers, errstr);
+     if (conf->set("metadata.broker.list", brokers, errstr) !=
+        RdKafka::Conf::CONF_OK)
+    {
+        std::cerr << errstr << std::endl;
+        exit(1);
+    }
+     if (conf->set("enable.auto.commit", "false", errstr) !=
+        RdKafka::Conf::CONF_OK)
+    {
+        std::cerr << errstr << std::endl;
+        exit(1);
+    }
 
-    conf->set("enable,auto.commit", "false", errstr);
-
-    conf->set("fetch.wait.max,ms", "0", errstr);
+    if (conf->set("fetch.wait.max.ms", "0", errstr) !=
+        RdKafka::Conf::CONF_OK)
+    {
+        std::cerr << errstr << std::endl;
+        exit(1);
+    }
 
     consumer = RdKafka::Consumer::create(conf, errstr);
     if (!consumer)

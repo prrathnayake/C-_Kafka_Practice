@@ -177,6 +177,30 @@ DeliveryReportCb.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/DeliveryReportCb.cpp.s
 .PHONY : DeliveryReportCb.cpp.s
 
+Helper.o: Helper.cpp.o
+.PHONY : Helper.o
+
+# target to build an object file
+Helper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/Helper.cpp.o
+.PHONY : Helper.cpp.o
+
+Helper.i: Helper.cpp.i
+.PHONY : Helper.i
+
+# target to preprocess a source file
+Helper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/Helper.cpp.i
+.PHONY : Helper.cpp.i
+
+Helper.s: Helper.cpp.s
+.PHONY : Helper.s
+
+# target to generate assembly for a file
+Helper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/Helper.cpp.s
+.PHONY : Helper.cpp.s
+
 KafkaConsumer.o: KafkaConsumer.cpp.o
 .PHONY : KafkaConsumer.o
 
@@ -264,6 +288,9 @@ help:
 	@echo "... DeliveryReportCb.o"
 	@echo "... DeliveryReportCb.i"
 	@echo "... DeliveryReportCb.s"
+	@echo "... Helper.o"
+	@echo "... Helper.i"
+	@echo "... Helper.s"
 	@echo "... KafkaConsumer.o"
 	@echo "... KafkaConsumer.i"
 	@echo "... KafkaConsumer.s"
