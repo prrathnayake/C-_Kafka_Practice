@@ -6,6 +6,7 @@
 #include "KafkaConsumer.h"
 #include "ConsumeCb.h"
 #include "Helper.h"
+#include "ThreadPool.h"
 
 #include <librdkafka/rdkafkacpp.h>
 
@@ -29,17 +30,21 @@ void sendMessage(KafkaProducer *kafkaProducer)
 
 int main()
 {
+    ThreadPool pool;
+    pool.addThread("consumer");
+    pool.addThread("producer");
+
     KafkaConsumer *kafkaConsumer = new KafkaConsumer("localhost:9092", "topic");
-    std::thread messageReceivingThread(receiveMessage, kafkaConsumer);
+    pool.addTask("consumer", std::bind(receiveMessage, kafkaConsumer));
 
     KafkaProducer *kafkaProducer = new KafkaProducer("localhost:9092");
-    std::thread messageSendingThread(sendMessage, kafkaProducer);
+    pool.addTask("producer", std::bind(sendMessage, kafkaProducer));
 
-    messageSendingThread.join();
+    pool.joinAll();
+
     delete kafkaProducer;
 
     kafkaConsumer->stopConsumeMessages();
-    messageReceivingThread.join();
     delete kafkaConsumer;
 
     return 0;

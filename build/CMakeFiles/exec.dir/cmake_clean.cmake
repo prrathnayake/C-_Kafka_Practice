@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/exec.dir/KafkaConsumer.cpp.o.d"
   "CMakeFiles/exec.dir/KafkaProducer.cpp.o"
   "CMakeFiles/exec.dir/KafkaProducer.cpp.o.d"
+  "CMakeFiles/exec.dir/ThreadPool.cpp.o"
+  "CMakeFiles/exec.dir/ThreadPool.cpp.o.d"
   "CMakeFiles/exec.dir/main.cpp.o"
   "CMakeFiles/exec.dir/main.cpp.o.d"
   "exec"

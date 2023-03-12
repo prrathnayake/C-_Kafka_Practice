@@ -4,6 +4,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 project(kafka)
 
-add_executable(exec main.cpp KafkaProducer.cpp KafkaConsumer.cpp ConsumeCb.cpp DeliveryReportCb.cpp Helper.cpp)
+add_executable(exec main.cpp KafkaProducer.cpp KafkaConsumer.cpp ConsumeCb.cpp DeliveryReportCb.cpp Helper.cpp ThreadPool.cpp)
 
 target_link_libraries(exec PUBLIC rdkafka++)
