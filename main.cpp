@@ -40,12 +40,15 @@ int main()
     KafkaProducer *kafkaProducer = new KafkaProducer("localhost:9092");
     pool.addTask("producer", std::bind(sendMessage, kafkaProducer));
 
-    pool.joinAll();
-
-    delete kafkaProducer;
-
+    int input;
+    std::cin >> input;
     kafkaConsumer->stopConsumeMessages();
+    delete kafkaProducer;
     delete kafkaConsumer;
+
+    std::cout << "End" << std::endl;
+
+    pool.joinAll();
 
     return 0;
 }

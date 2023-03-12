@@ -34,10 +34,21 @@ void ThreadPool::addTask(const std::string &threadName, std::function<void()> ta
 void ThreadPool::joinAll()
 {
     stop = true;
+    std::cerr << "Current Thread count -  " << threads.size() << std::endl;
     for (auto &pair : threads)
     {
-        std::cout << "Join Thread" << pair.second.get_id() << std::endl;
-        pair.second.join();
+        if (tasks[pair.first].size() > 0)
+        {
+            std::cerr << "Thread " << pair.first << " is already executing a task.\n";
+            return;
+        }
+        if (pair.second.joinable())
+        {
+            std::cout << "Join Thread " << pair.first << std::endl;
+            pair.second.join();
+        }
+        std::cout << "joined
+        " << std::endl;
     }
 }
 

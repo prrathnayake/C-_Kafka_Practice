@@ -10,13 +10,13 @@ KafkaConsumer::KafkaConsumer(std::string brokers, std::string topics)
     std::string errstr;
     RdKafka::Conf *conf = RdKafka::Conf::create(RdKafka::Conf::CONF_GLOBAL);
 
-     if (conf->set("metadata.broker.list", brokers, errstr) !=
+    if (conf->set("metadata.broker.list", brokers, errstr) !=
         RdKafka::Conf::CONF_OK)
     {
         std::cerr << errstr << std::endl;
         exit(1);
     }
-     if (conf->set("enable.auto.commit", "false", errstr) !=
+    if (conf->set("enable.auto.commit", "false", errstr) !=
         RdKafka::Conf::CONF_OK)
     {
         std::cerr << errstr << std::endl;
@@ -58,10 +58,13 @@ KafkaConsumer::KafkaConsumer(std::string brokers, std::string topics)
         std::cerr << "Failed to create consumer: " << errstr << std::endl;
         exit(1);
     }
+
+    std::cout << "Creating Kafka consumer" << std::endl;
 }
 
 void KafkaConsumer::consumeMessages(ExCosumeCb ex_consume_cb)
 {
+    std::cout << "Starting Kafka consumer" << std::endl;
     int use_ccb = 1;
     while (consume)
     {
@@ -74,6 +77,7 @@ void KafkaConsumer::consumeMessages(ExCosumeCb ex_consume_cb)
 void KafkaConsumer::stopConsumeMessages()
 {
     consume = false;
+    std::cout << "Stopping Kafka consumer" << std::endl;
 }
 
 KafkaConsumer::~KafkaConsumer()

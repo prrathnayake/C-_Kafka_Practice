@@ -69,11 +69,11 @@ KafkaProducer::KafkaProducer(std::string brokers)
     }
 
     delete conf;
+    std::cout << "Creating Kafka producer" << std::endl;
 }
 
 void KafkaProducer::produceMessages(std::string topic, std::string message)
 {
-
 retry:
     RdKafka::ErrorCode err = producer->produce(
         topic,
@@ -106,4 +106,5 @@ KafkaProducer::~KafkaProducer()
         std::cerr << producer->outq_len()
                   << " message(s) were not delivered" << std::endl;
     delete producer;
+    std::cout << "Stopping Kafka producer" << std::endl;
 }
