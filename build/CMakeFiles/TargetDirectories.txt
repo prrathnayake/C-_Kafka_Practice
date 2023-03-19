@@ -1,4 +1,4 @@
-/root/kafka-cpp-getting-started/build/CMakeFiles/KAFKA.dir
+/root/kafka-cpp-getting-started/build/CMakeFiles/exec.dir
 /root/kafka-cpp-getting-started/build/CMakeFiles/edit_cache.dir
 /root/kafka-cpp-getting-started/build/CMakeFiles/rebuild_cache.dir
 /root/kafka-cpp-getting-started/build/app_kafka_library/src/CMakeFiles/app_kafka_library.dir

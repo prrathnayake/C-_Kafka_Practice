@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/kafka-cpp-getting-started/main.cpp" "CMakeFiles/KAFKA.dir/main.cpp.o" "gcc" "CMakeFiles/KAFKA.dir/main.cpp.o.d"
+  "/root/kafka-cpp-getting-started/main.cpp" "CMakeFiles/exec.dir/main.cpp.o" "gcc" "CMakeFiles/exec.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.

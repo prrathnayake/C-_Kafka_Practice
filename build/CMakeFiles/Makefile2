@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /root/kafka-cpp-getting-started/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/KAFKA.dir/all
+all: CMakeFiles/exec.dir/all
 all: app_kafka_library/src/all
 all: app_utils/src/all
 .PHONY : all
@@ -74,7 +74,7 @@ preinstall: app_utils/src/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/KAFKA.dir/clean
+clean: CMakeFiles/exec.dir/clean
 clean: app_kafka_library/src/clean
 clean: app_utils/src/clean
 .PHONY : clean
@@ -110,31 +110,31 @@ app_utils/src/clean: app_utils/src/CMakeFiles/app_utils.dir/clean
 .PHONY : app_utils/src/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/KAFKA.dir
+# Target rules for target CMakeFiles/exec.dir
 
 # All Build rule for target.
-CMakeFiles/KAFKA.dir/all: app_kafka_library/src/CMakeFiles/app_kafka_library.dir/all
-CMakeFiles/KAFKA.dir/all: app_utils/src/CMakeFiles/app_utils.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/kafka-cpp-getting-started/build/CMakeFiles --progress-num=1,2 "Built target KAFKA"
-.PHONY : CMakeFiles/KAFKA.dir/all
+CMakeFiles/exec.dir/all: app_kafka_library/src/CMakeFiles/app_kafka_library.dir/all
+CMakeFiles/exec.dir/all: app_utils/src/CMakeFiles/app_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/kafka-cpp-getting-started/build/CMakeFiles --progress-num=9,10 "Built target exec"
+.PHONY : CMakeFiles/exec.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/KAFKA.dir/rule: cmake_check_build_system
+CMakeFiles/exec.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/kafka-cpp-getting-started/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/KAFKA.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/exec.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/kafka-cpp-getting-started/build/CMakeFiles 0
-.PHONY : CMakeFiles/KAFKA.dir/rule
+.PHONY : CMakeFiles/exec.dir/rule
 
 # Convenience name for target.
-KAFKA: CMakeFiles/KAFKA.dir/rule
-.PHONY : KAFKA
+exec: CMakeFiles/exec.dir/rule
+.PHONY : exec
 
 # clean rule for target.
-CMakeFiles/KAFKA.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/clean
-.PHONY : CMakeFiles/KAFKA.dir/clean
+CMakeFiles/exec.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/clean
+.PHONY : CMakeFiles/exec.dir/clean
 
 #=============================================================================
 # Target rules for target app_kafka_library/src/CMakeFiles/app_kafka_library.dir
@@ -143,7 +143,7 @@ CMakeFiles/KAFKA.dir/clean:
 app_kafka_library/src/CMakeFiles/app_kafka_library.dir/all:
 	$(MAKE) $(MAKESILENT) -f app_kafka_library/src/CMakeFiles/app_kafka_library.dir/build.make app_kafka_library/src/CMakeFiles/app_kafka_library.dir/depend
 	$(MAKE) $(MAKESILENT) -f app_kafka_library/src/CMakeFiles/app_kafka_library.dir/build.make app_kafka_library/src/CMakeFiles/app_kafka_library.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/kafka-cpp-getting-started/build/CMakeFiles --progress-num=3,4,5,6,7,8 "Built target app_kafka_library"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/kafka-cpp-getting-started/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target app_kafka_library"
 .PHONY : app_kafka_library/src/CMakeFiles/app_kafka_library.dir/all
 
 # Build rule for subdir invocation for target.
@@ -169,7 +169,7 @@ app_kafka_library/src/CMakeFiles/app_kafka_library.dir/clean:
 app_utils/src/CMakeFiles/app_utils.dir/all:
 	$(MAKE) $(MAKESILENT) -f app_utils/src/CMakeFiles/app_utils.dir/build.make app_utils/src/CMakeFiles/app_utils.dir/depend
 	$(MAKE) $(MAKESILENT) -f app_utils/src/CMakeFiles/app_utils.dir/build.make app_utils/src/CMakeFiles/app_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/kafka-cpp-getting-started/build/CMakeFiles --progress-num=9,10 "Built target app_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/kafka-cpp-getting-started/build/CMakeFiles --progress-num=7,8 "Built target app_utils"
 .PHONY : app_utils/src/CMakeFiles/app_utils.dir/all
 
 # Build rule for subdir invocation for target.

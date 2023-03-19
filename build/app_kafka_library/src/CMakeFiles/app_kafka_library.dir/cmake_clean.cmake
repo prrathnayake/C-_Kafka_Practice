@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "../../lib/libapp_kafka_library.pdb"
+  "../../lib/libapp_kafka_library.so"
   "CMakeFiles/app_kafka_library.dir/kafka/ConsumeCb.cpp.o"
   "CMakeFiles/app_kafka_library.dir/kafka/ConsumeCb.cpp.o.d"
   "CMakeFiles/app_kafka_library.dir/kafka/DeliveryReportCb.cpp.o"
@@ -9,8 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/app_kafka_library.dir/kafka/KafkaConsumer.cpp.o.d"
   "CMakeFiles/app_kafka_library.dir/kafka/KafkaProducer.cpp.o"
   "CMakeFiles/app_kafka_library.dir/kafka/KafkaProducer.cpp.o.d"
-  "libapp_kafka_library.pdb"
-  "libapp_kafka_library.so"
 )
 
 # Per-language clean rules from dependency scanning.

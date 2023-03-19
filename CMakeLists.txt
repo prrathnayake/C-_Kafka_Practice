@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.25.2)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-project(KAFKA)
+project(exec)
 
 add_executable(${PROJECT_NAME} main.cpp)
 

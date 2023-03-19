@@ -1,4 +1,4 @@
-CMakeFiles/KAFKA.dir/main.cpp.o: /root/kafka-cpp-getting-started/main.cpp \
+CMakeFiles/exec.dir/main.cpp.o: /root/kafka-cpp-getting-started/main.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
