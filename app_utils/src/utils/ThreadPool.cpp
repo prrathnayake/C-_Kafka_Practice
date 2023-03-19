@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ThreadPool.h"
 
-void ThreadPool::addThread(const std::string &threadName)
+void utils::ThreadPool::addThread(const std::string &threadName)
 {
     if (threads.count(threadName) > 0)
     {
@@ -12,7 +12,7 @@ void ThreadPool::addThread(const std::string &threadName)
     threads[threadName] = std::thread(&ThreadPool::threadFunc, this, threadName);
 }
 
-void ThreadPool::addTask(const std::string &threadName, std::function<void()> task)
+void utils::ThreadPool::addTask(const std::string &threadName, std::function<void()> task)
 {
     if (threads.count(threadName) == 0)
     {
@@ -31,7 +31,7 @@ void ThreadPool::addTask(const std::string &threadName, std::function<void()> ta
     taskCVs[threadName].notify_one();
 }
 
-void ThreadPool::joinAll()
+void utils::ThreadPool::joinAll()
 {
     stop = true;
     std::cerr << "Current Thread count -  " << threads.size() << std::endl;
@@ -51,7 +51,7 @@ void ThreadPool::joinAll()
     }
 }
 
-void ThreadPool::threadFunc(const std::string &threadName)
+void utils::ThreadPool::threadFunc(const std::string &threadName)
 {
     while (!stop)
     {

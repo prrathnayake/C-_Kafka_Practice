@@ -8,13 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/kafka-cpp-getting-started/main.cpp" "CMakeFiles/KAFKA.dir/main.cpp.o" "gcc" "CMakeFiles/KAFKA.dir/main.cpp.o.d"
+  "/root/kafka-cpp-getting-started/app_utils/src/utils/ThreadPool.cpp" "app_utils/src/CMakeFiles/app_utils.dir/utils/ThreadPool.cpp.o" "gcc" "app_utils/src/CMakeFiles/app_utils.dir/utils/ThreadPool.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/root/kafka-cpp-getting-started/build/app_kafka_library/src/CMakeFiles/app_kafka_library.dir/DependInfo.cmake"
-  "/root/kafka-cpp-getting-started/build/app_utils/src/CMakeFiles/app_utils.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

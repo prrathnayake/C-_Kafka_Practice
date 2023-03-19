@@ -9,6 +9,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/root/kafka-cpp-getting-started/CMakeLists.txt"
   "/root/kafka-cpp-getting-started/app_kafka_library/src/CMakeLists.txt"
+  "/root/kafka-cpp-getting-started/app_utils/src/CMakeLists.txt"
   "CMakeFiles/3.25.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.25.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.25.2/CMakeSystem.cmake"
@@ -41,10 +42,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "app_kafka_library/src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "app_utils/src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/KAFKA.dir/DependInfo.cmake"
   "app_kafka_library/src/CMakeFiles/app_kafka_library.dir/DependInfo.cmake"
+  "app_utils/src/CMakeFiles/app_utils.dir/DependInfo.cmake"
   )

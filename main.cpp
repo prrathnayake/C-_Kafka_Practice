@@ -6,7 +6,7 @@
 #include <kafka/KafkaConsumer.h>
 #include <kafka/ConsumeCb.h>
 #include <kafka/Helper.h>
-#include "ThreadPool.h"
+#include <utils/ThreadPool.h>
 
 void receiveMessage(kafka::KafkaConsumer *kafkaConsumer)
 {
@@ -28,7 +28,7 @@ void sendMessage(kafka::KafkaProducer *kafkaProducer)
 
 int main()
 {
-    ThreadPool pool;
+    utils::ThreadPool pool;
     pool.addThread("consumer");
     pool.addThread("producer");
 

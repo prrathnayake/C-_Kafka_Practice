@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/kafka-cpp-getting-started/build/CMakeFiles /root/kafka-cpp-getting-started/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /root/kafka-cpp-getting-started/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/kafka-cpp-getting-started/build/CMakeFiles /root/kafka-cpp-getting-started/build/app_utils/src//CMakeFiles/progress.marks
+	cd /root/kafka-cpp-getting-started/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_utils/src/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/kafka-cpp-getting-started/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /root/kafka-cpp-getting-started/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_utils/src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,81 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /root/kafka-cpp-getting-started/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_utils/src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /root/kafka-cpp-getting-started/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_utils/src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/kafka-cpp-getting-started/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named KAFKA
+# Convenience name for target.
+app_utils/src/CMakeFiles/app_utils.dir/rule:
+	cd /root/kafka-cpp-getting-started/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_utils/src/CMakeFiles/app_utils.dir/rule
+.PHONY : app_utils/src/CMakeFiles/app_utils.dir/rule
 
-# Build rule for target.
-KAFKA: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 KAFKA
-.PHONY : KAFKA
-
-# fast build rule for target.
-KAFKA/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/build
-.PHONY : KAFKA/fast
-
-#=============================================================================
-# Target rules for targets named app_kafka_library
-
-# Build rule for target.
-app_kafka_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_kafka_library
-.PHONY : app_kafka_library
-
-# fast build rule for target.
-app_kafka_library/fast:
-	$(MAKE) $(MAKESILENT) -f app_kafka_library/src/CMakeFiles/app_kafka_library.dir/build.make app_kafka_library/src/CMakeFiles/app_kafka_library.dir/build
-.PHONY : app_kafka_library/fast
-
-#=============================================================================
-# Target rules for targets named app_utils
-
-# Build rule for target.
-app_utils: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_utils
+# Convenience name for target.
+app_utils: app_utils/src/CMakeFiles/app_utils.dir/rule
 .PHONY : app_utils
 
 # fast build rule for target.
 app_utils/fast:
-	$(MAKE) $(MAKESILENT) -f app_utils/src/CMakeFiles/app_utils.dir/build.make app_utils/src/CMakeFiles/app_utils.dir/build
+	cd /root/kafka-cpp-getting-started/build && $(MAKE) $(MAKESILENT) -f app_utils/src/CMakeFiles/app_utils.dir/build.make app_utils/src/CMakeFiles/app_utils.dir/build
 .PHONY : app_utils/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+utils/ThreadPool.o: utils/ThreadPool.cpp.o
+.PHONY : utils/ThreadPool.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/main.cpp.o
-.PHONY : main.cpp.o
+utils/ThreadPool.cpp.o:
+	cd /root/kafka-cpp-getting-started/build && $(MAKE) $(MAKESILENT) -f app_utils/src/CMakeFiles/app_utils.dir/build.make app_utils/src/CMakeFiles/app_utils.dir/utils/ThreadPool.cpp.o
+.PHONY : utils/ThreadPool.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+utils/ThreadPool.i: utils/ThreadPool.cpp.i
+.PHONY : utils/ThreadPool.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/main.cpp.i
-.PHONY : main.cpp.i
+utils/ThreadPool.cpp.i:
+	cd /root/kafka-cpp-getting-started/build && $(MAKE) $(MAKESILENT) -f app_utils/src/CMakeFiles/app_utils.dir/build.make app_utils/src/CMakeFiles/app_utils.dir/utils/ThreadPool.cpp.i
+.PHONY : utils/ThreadPool.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+utils/ThreadPool.s: utils/ThreadPool.cpp.s
+.PHONY : utils/ThreadPool.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/main.cpp.s
-.PHONY : main.cpp.s
+utils/ThreadPool.cpp.s:
+	cd /root/kafka-cpp-getting-started/build && $(MAKE) $(MAKESILENT) -f app_utils/src/CMakeFiles/app_utils.dir/build.make app_utils/src/CMakeFiles/app_utils.dir/utils/ThreadPool.cpp.s
+.PHONY : utils/ThreadPool.cpp.s
 
 # Help Target
 help:
@@ -187,12 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... KAFKA"
-	@echo "... app_kafka_library"
 	@echo "... app_utils"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... utils/ThreadPool.o"
+	@echo "... utils/ThreadPool.i"
+	@echo "... utils/ThreadPool.s"
 .PHONY : help
 
 
@@ -204,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/kafka-cpp-getting-started/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

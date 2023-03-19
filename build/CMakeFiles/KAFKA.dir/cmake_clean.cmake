@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/KAFKA.dir/ThreadPool.cpp.o"
-  "CMakeFiles/KAFKA.dir/ThreadPool.cpp.o.d"
   "CMakeFiles/KAFKA.dir/main.cpp.o"
   "CMakeFiles/KAFKA.dir/main.cpp.o.d"
   "KAFKA"
