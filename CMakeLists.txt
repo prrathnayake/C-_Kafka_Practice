@@ -12,10 +12,6 @@ target_include_directories(${PROJECT_NAME}
     PUBLIC app_kafka_library/src
     PUBLIC app_utils/src)
 
-target_link_directories(${PROJECT_NAME}
-    PUBLIC app_kafka_library
-    PUBLIC app_utils)
-
 target_link_libraries(${PROJECT_NAME}
     PUBLIC app_kafka_library
     PUBLIC app_utils)
