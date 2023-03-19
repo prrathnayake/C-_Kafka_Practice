@@ -148,7 +148,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=kafka
+CMAKE_PROJECT_NAME:STATIC=KAFKA
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -213,13 +213,22 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-kafka_BINARY_DIR:STATIC=/root/kafka-cpp-getting-started/build
+KAFKA_BINARY_DIR:STATIC=/root/kafka-cpp-getting-started/build
 
 //Value Computed by CMake
-kafka_IS_TOP_LEVEL:STATIC=ON
+KAFKA_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-kafka_SOURCE_DIR:STATIC=/root/kafka-cpp-getting-started
+KAFKA_SOURCE_DIR:STATIC=/root/kafka-cpp-getting-started
+
+//Value Computed by CMake
+app_kafka_library_BINARY_DIR:STATIC=/root/kafka-cpp-getting-started/build/app_kafka_library/src
+
+//Value Computed by CMake
+app_kafka_library_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+app_kafka_library_SOURCE_DIR:STATIC=/root/kafka-cpp-getting-started/app_kafka_library/src
 
 
 ########################
@@ -326,7 +335,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

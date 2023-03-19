@@ -117,144 +117,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named exec
+# Target rules for targets named KAFKA
 
 # Build rule for target.
-exec: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exec
-.PHONY : exec
+KAFKA: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 KAFKA
+.PHONY : KAFKA
 
 # fast build rule for target.
-exec/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/build
-.PHONY : exec/fast
+KAFKA/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/build
+.PHONY : KAFKA/fast
 
-ConsumeCb.o: ConsumeCb.cpp.o
-.PHONY : ConsumeCb.o
+#=============================================================================
+# Target rules for targets named app_kafka_library
 
-# target to build an object file
-ConsumeCb.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/ConsumeCb.cpp.o
-.PHONY : ConsumeCb.cpp.o
+# Build rule for target.
+app_kafka_library: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_kafka_library
+.PHONY : app_kafka_library
 
-ConsumeCb.i: ConsumeCb.cpp.i
-.PHONY : ConsumeCb.i
-
-# target to preprocess a source file
-ConsumeCb.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/ConsumeCb.cpp.i
-.PHONY : ConsumeCb.cpp.i
-
-ConsumeCb.s: ConsumeCb.cpp.s
-.PHONY : ConsumeCb.s
-
-# target to generate assembly for a file
-ConsumeCb.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/ConsumeCb.cpp.s
-.PHONY : ConsumeCb.cpp.s
-
-DeliveryReportCb.o: DeliveryReportCb.cpp.o
-.PHONY : DeliveryReportCb.o
-
-# target to build an object file
-DeliveryReportCb.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/DeliveryReportCb.cpp.o
-.PHONY : DeliveryReportCb.cpp.o
-
-DeliveryReportCb.i: DeliveryReportCb.cpp.i
-.PHONY : DeliveryReportCb.i
-
-# target to preprocess a source file
-DeliveryReportCb.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/DeliveryReportCb.cpp.i
-.PHONY : DeliveryReportCb.cpp.i
-
-DeliveryReportCb.s: DeliveryReportCb.cpp.s
-.PHONY : DeliveryReportCb.s
-
-# target to generate assembly for a file
-DeliveryReportCb.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/DeliveryReportCb.cpp.s
-.PHONY : DeliveryReportCb.cpp.s
-
-Helper.o: Helper.cpp.o
-.PHONY : Helper.o
-
-# target to build an object file
-Helper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/Helper.cpp.o
-.PHONY : Helper.cpp.o
-
-Helper.i: Helper.cpp.i
-.PHONY : Helper.i
-
-# target to preprocess a source file
-Helper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/Helper.cpp.i
-.PHONY : Helper.cpp.i
-
-Helper.s: Helper.cpp.s
-.PHONY : Helper.s
-
-# target to generate assembly for a file
-Helper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/Helper.cpp.s
-.PHONY : Helper.cpp.s
-
-KafkaConsumer.o: KafkaConsumer.cpp.o
-.PHONY : KafkaConsumer.o
-
-# target to build an object file
-KafkaConsumer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/KafkaConsumer.cpp.o
-.PHONY : KafkaConsumer.cpp.o
-
-KafkaConsumer.i: KafkaConsumer.cpp.i
-.PHONY : KafkaConsumer.i
-
-# target to preprocess a source file
-KafkaConsumer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/KafkaConsumer.cpp.i
-.PHONY : KafkaConsumer.cpp.i
-
-KafkaConsumer.s: KafkaConsumer.cpp.s
-.PHONY : KafkaConsumer.s
-
-# target to generate assembly for a file
-KafkaConsumer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/KafkaConsumer.cpp.s
-.PHONY : KafkaConsumer.cpp.s
-
-KafkaProducer.o: KafkaProducer.cpp.o
-.PHONY : KafkaProducer.o
-
-# target to build an object file
-KafkaProducer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/KafkaProducer.cpp.o
-.PHONY : KafkaProducer.cpp.o
-
-KafkaProducer.i: KafkaProducer.cpp.i
-.PHONY : KafkaProducer.i
-
-# target to preprocess a source file
-KafkaProducer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/KafkaProducer.cpp.i
-.PHONY : KafkaProducer.cpp.i
-
-KafkaProducer.s: KafkaProducer.cpp.s
-.PHONY : KafkaProducer.s
-
-# target to generate assembly for a file
-KafkaProducer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/KafkaProducer.cpp.s
-.PHONY : KafkaProducer.cpp.s
+# fast build rule for target.
+app_kafka_library/fast:
+	$(MAKE) $(MAKESILENT) -f app_kafka_library/src/CMakeFiles/app_kafka_library.dir/build.make app_kafka_library/src/CMakeFiles/app_kafka_library.dir/build
+.PHONY : app_kafka_library/fast
 
 ThreadPool.o: ThreadPool.cpp.o
 .PHONY : ThreadPool.o
 
 # target to build an object file
 ThreadPool.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/ThreadPool.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/ThreadPool.cpp.o
 .PHONY : ThreadPool.cpp.o
 
 ThreadPool.i: ThreadPool.cpp.i
@@ -262,7 +155,7 @@ ThreadPool.i: ThreadPool.cpp.i
 
 # target to preprocess a source file
 ThreadPool.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/ThreadPool.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/ThreadPool.cpp.i
 .PHONY : ThreadPool.cpp.i
 
 ThreadPool.s: ThreadPool.cpp.s
@@ -270,7 +163,7 @@ ThreadPool.s: ThreadPool.cpp.s
 
 # target to generate assembly for a file
 ThreadPool.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/ThreadPool.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/ThreadPool.cpp.s
 .PHONY : ThreadPool.cpp.s
 
 main.o: main.cpp.o
@@ -278,7 +171,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -286,7 +179,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -294,7 +187,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/KAFKA.dir/build.make CMakeFiles/KAFKA.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -305,22 +198,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... exec"
-	@echo "... ConsumeCb.o"
-	@echo "... ConsumeCb.i"
-	@echo "... ConsumeCb.s"
-	@echo "... DeliveryReportCb.o"
-	@echo "... DeliveryReportCb.i"
-	@echo "... DeliveryReportCb.s"
-	@echo "... Helper.o"
-	@echo "... Helper.i"
-	@echo "... Helper.s"
-	@echo "... KafkaConsumer.o"
-	@echo "... KafkaConsumer.i"
-	@echo "... KafkaConsumer.s"
-	@echo "... KafkaProducer.o"
-	@echo "... KafkaProducer.i"
-	@echo "... KafkaProducer.s"
+	@echo "... KAFKA"
+	@echo "... app_kafka_library"
 	@echo "... ThreadPool.o"
 	@echo "... ThreadPool.i"
 	@echo "... ThreadPool.s"

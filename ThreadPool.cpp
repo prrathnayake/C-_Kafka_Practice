@@ -47,8 +47,7 @@ void ThreadPool::joinAll()
             std::cout << "Join Thread " << pair.first << std::endl;
             pair.second.join();
         }
-        std::cout << "joined
-        " << std::endl;
+        std::cout << "joined" << std::endl;
     }
 }
 

@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/exec.dir/main.cpp.o CMakeFiles/exec.dir/KafkaProducer.cpp.o CMakeFiles/exec.dir/KafkaConsumer.cpp.o CMakeFiles/exec.dir/ConsumeCb.cpp.o CMakeFiles/exec.dir/DeliveryReportCb.cpp.o CMakeFiles/exec.dir/Helper.cpp.o CMakeFiles/exec.dir/ThreadPool.cpp.o -o exec  -lrdkafka++ 

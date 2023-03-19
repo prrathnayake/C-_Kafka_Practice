@@ -2,29 +2,27 @@
 #include <string>
 #include <thread>
 
-#include "KafkaProducer.h"
-#include "KafkaConsumer.h"
-#include "ConsumeCb.h"
-#include "Helper.h"
+#include <kafka/KafkaProducer.h>
+#include <kafka/KafkaConsumer.h>
+#include <kafka/ConsumeCb.h>
+#include <kafka/Helper.h>
 #include "ThreadPool.h"
 
-#include <librdkafka/rdkafkacpp.h>
-
-void receiveMessage(KafkaConsumer *kafkaConsumer)
+void receiveMessage(kafka::KafkaConsumer *kafkaConsumer)
 {
-    ExCosumeCb cb;
+    kafka::ExCosumeCb cb;
     kafkaConsumer->consumeMessages(cb);
 }
 
-void sendMessage(KafkaProducer *kafkaProducer)
+void sendMessage(kafka::KafkaProducer *kafkaProducer)
 {
     int count = 0;
     while (count < 10)
     {
-        std::string message = std::to_string(Helper::getTimeInMicroseconds());
+        std::string message = std::to_string(kafka::Helper::getTimeInMicroseconds());
         kafkaProducer->produceMessages("topic", message);
         count++;
-        Helper::holdSeconds(1);
+        kafka::Helper::holdSeconds(1);
     }
 }
 
@@ -34,10 +32,10 @@ int main()
     pool.addThread("consumer");
     pool.addThread("producer");
 
-    KafkaConsumer *kafkaConsumer = new KafkaConsumer("localhost:9092", "topic");
+    kafka::KafkaConsumer *kafkaConsumer = new kafka::KafkaConsumer("localhost:9092", "topic");
     pool.addTask("consumer", std::bind(receiveMessage, kafkaConsumer));
 
-    KafkaProducer *kafkaProducer = new KafkaProducer("localhost:9092");
+    kafka::KafkaProducer *kafkaProducer = new kafka::KafkaProducer("localhost:9092");
     pool.addTask("producer", std::bind(sendMessage, kafkaProducer));
 
     int input;
