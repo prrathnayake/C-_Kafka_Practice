@@ -5,6 +5,7 @@ from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout
 class kafkaRecipe(ConanFile):
     name = "kafka"
     version = "1.0"
+    requires = "librdkafka/2.0.2"
 
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
