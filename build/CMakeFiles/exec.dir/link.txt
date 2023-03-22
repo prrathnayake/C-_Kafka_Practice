@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/exec.dir/main.cpp.o -o exec  -Wl,-rpath,/root/kafka-cpp-getting-started/build/lib lib/libapp_kafka_library.so lib/libapp_utils.so -lrdkafka++ 
