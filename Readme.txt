@@ -6,4 +6,4 @@ conan install .
 conan build .
 
 #To run application
-./build/Release/bin/exec
+./build/Release/bin/KafkaProject
