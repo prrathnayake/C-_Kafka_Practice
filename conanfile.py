@@ -8,6 +8,8 @@ class helloTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "CMakeDeps", "CMakeToolchain"
 
+    requires = "librdkafka/2.0.2"
+
     def requirements(self):
         self.requires(self.tested_reference_str)
 

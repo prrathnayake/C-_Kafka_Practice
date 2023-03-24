@@ -8,6 +8,3 @@ file(GLOB files
 project(app_kafka_library)
 
 add_library(${PROJECT_NAME} SHARED ${files})
-
-
-
