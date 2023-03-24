@@ -6,17 +6,11 @@ class kafkaRecipe(ConanFile):
     name = "utils"
     version = "1.0"
 
-    # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
+    options = {"shared": [True, False]}
+    default_options = {"shared": True}
 
-    # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "CMakeLists.txt", "utils/*"
-
-    def config_options(self):
-        if self.settings.os == "Windows":
-            del self.options.fPIC
 
     def layout(self):
         cmake_layout(self)
